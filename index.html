@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Admin · WolfPay</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes flashSaldo {
+      0% { color: #11d7d7; transform: scale(1); opacity: 1; }
+      40% { color: #a3f9f9; transform: scale(1.08); opacity: 0.9; }
+      100% { color: #11d7d7; transform: scale(1); opacity: 1; }
+    }
+    .saldo.flash { animation: flashSaldo 0.8s ease; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="titulo">CUENTA DE AHORROS</h2>
+    <hr class="divider" />
+
+    <!-- Tarjeta principal -->
+    <div class="card cuenta">
+      <div class="saldo">0.00€</div>
+      <div class="iban-row">
+        <div class="iban-text">IBAN: ES06 2100 1278 2007 0000 5250</div>
+        <button id="copyIbanBtn" class="copy-btn" title="Copiar IBAN">📋</button>
+      </div>
+    </div>
+
+    <!-- Botones de control -->
+    <div class="admin-btns">
+      <button id="btnRestar" class="btn-restar">Restar [–]</button>
+      <button id="btnSumar" class="btn-sumar">Sumar [+]</button>
+      <button id="btnEditar" class="btn-editar">Editar [Δ]</button>
+    </div>
+
+    <!-- Sección Bizum -->
+    <section class="bizum-section">
+      <div class="bizum-header">
+        <div class="bizum-logo">
+          <img src="../img/bizum.png" alt="bizum" />
+        </div>
+      </div>
+
+      <div class="bizum-card">
+        <div class="bizum-info">
+          <div><strong>Titular:</strong> <span>Saith Fabrizio B.</span></div>
+          <div><strong>Número:</strong> <span>660 04 24 17</span></div>
+        </div>
+        <div class="bizum-monto" id="bizumMonto"></div>
+      </div>
+
+      <div class="bizum-status"></div>
+
+      <!-- Botones dinámicos -->
+      <div class="bizum-actions">
+        <button id="btnOnline" class="btn-online" style="display:none;">Estoy en Línea 🟢</button>
+        <button id="btnLlego" class="btn-llego" style="display:none;">LLEGÓ BIZUM ✅</button>
+        <button id="btnNoLlego" class="btn-no" style="display:none;">NO LLEGÓ ❌</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-bg" id="modalOperacion" style="display:none;">
+    <div class="modal bizum-modal">
+      <button class="cerrar">✖</button>
+      <h3 id="modalTitulo">Monto</h3>
+      <input type="number" id="montoInput" placeholder="Ej: 10" min="0" step="0.01" />
+      <button id="confirmarOperacion">Confirmar</button>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
