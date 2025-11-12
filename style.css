@@ -1,0 +1,217 @@
+:root {
+  --teal:#11d7d7;
+  --bg:#171a1f;
+  --card:#1e2228;
+  --text:#ffffff;
+  --danger:#b91c1c;
+  --success:#10c76f;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--text);
+  min-height: 100vh;
+  padding: 24px 18px 40px;
+}
+
+/* Título */
+.titulo {
+  color: var(--teal);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.divider {
+  border: none;
+  height: 1px;
+  background: #30343b;
+  margin-bottom: 20px;
+}
+
+/* Tarjeta principal */
+.card.cuenta {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 22px;
+  margin-bottom: 18px;
+}
+.saldo {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+/* IBAN con botón */
+.iban-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.iban-text {
+  font-size: 14px;
+  color: var(--teal);
+  word-break: break-all;
+}
+.copy-btn {
+  background: rgba(17, 215, 215, 0.08);
+  border: 1px solid rgba(17, 215, 215, 0.35);
+  color: var(--teal);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: 0.2s ease;
+}
+.copy-btn:hover {
+  background: rgba(17, 215, 215, 0.2);
+  transform: scale(1.05);
+}
+.copy-btn:active {
+  transform: scale(0.93);
+}
+
+/* Botones admin */
+.admin-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.admin-btns button {
+  flex: 1;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+.btn-restar { background: var(--danger); color: #fff; }
+.btn-sumar  { background: var(--success); color: #012222; }
+.btn-editar { background: #2072ff; color: #fff; }
+button:active { transform: scale(0.97); }
+
+/* Bizum */
+.bizum-section { display: flex; flex-direction: column; gap: 12px; }
+.bizum-logo img { width: 80px; }
+
+.bizum-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bizum-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+}
+.bizum-info strong { color: var(--teal); }
+.bizum-monto {
+  display: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(126, 224, 224, 0.85);
+}
+.bizum-monto.visible { display: block; }
+
+/* Botones Bizum dinámicos */
+.bizum-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+.bizum-actions button {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.btn-online { background: #2b2e33; color: var(--success); border: 2px solid var(--success); }
+.btn-llego { background: var(--success); color: #012222; }
+.btn-no { background: var(--danger); color: #fff; }
+
+/* Modal */
+.modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.65);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal {
+  background: #1e232b;
+  color: white;
+  border-radius: 14px;
+  padding: 26px 28px;
+  text-align: center;
+  width: 85%;
+  max-width: 320px;
+  position: relative;
+}
+.modal h3 { font-size: 18px; margin-bottom: 20px; font-weight: 600; }
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 1px solid #11d7d7;
+  background: #101417;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+.modal button {
+  width: 100%;
+  background: #10c7c7;
+  border: none;
+  color: #012222;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.modal .cerrar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #ccc;
+  font-size: 17px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.modal .cerrar:hover {
+  color: white;
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.08);
+}
