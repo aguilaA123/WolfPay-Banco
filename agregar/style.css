@@ -1,0 +1,243 @@
+/* Quitar highlight azul */
+* { 
+  -webkit-tap-highlight-color: transparent !important; 
+}
+*:focus { 
+  outline: none !important; 
+}
+
+:root {
+  --teal:#11d7d7;
+  --bg:#171a1f;
+  --text:#ffffff;
+  --success:#10c76f;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+body {
+  background: var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto;
+  color: var(--text);
+  padding: 6px 18px 40px;   /* ← ESPACIO SUPERIOR REDUCIDO */
+}
+
+.container {
+  max-width: 480px;
+  margin: auto;
+}
+
+/* BOTÓN REGRESAR */
+.btn-volver {
+  display: inline-block;
+  font-size: 15px;
+  color: var(--teal);
+  font-weight: 700;
+  margin-bottom: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.btn-volver:active { opacity: 0.6; }
+
+/* TÍTULO */
+.titulo-boleta {
+  color: var(--teal);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.divider {
+  height: 1px;
+  background:#30343b;
+  border:none;
+  margin: 14px 0 20px;
+}
+
+/* FORM SUPERIOR (precio + fecha) */
+.form-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.campo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.campo label {
+  font-size: 13px;
+  color: #bbbbbb;
+  margin-bottom: 6px;
+}
+
+/* Inputs / textarea / select */
+input,
+textarea,
+select {
+  background: #101417;
+  border: 1px solid var(--teal);
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+  height: 85px;
+}
+
+/* SELECT */
+select {
+  margin-bottom: 16px;
+}
+
+select option {
+  background: #101417;
+  color: white;
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: #6acccc;
+}
+
+/* Quitar flechas number */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* SWITCH montos inicial/final */
+.toggle-montos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 12px;
+}
+
+.toggle-text {
+  font-size: 14px;
+}
+
+.switch {
+  position: relative;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #444;
+  border-radius: 24px;
+  transition: 0.2s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+  background: var(--teal);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* MONTOS INICIAL / FINAL */
+.montos-extra {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.montos-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* BOTÓN AÑADIR */
+.btn-agregar {
+  margin-top: 18px;
+  background: var(--teal);
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 12px;
+  color:#012222;
+  font-weight: 700;
+  font-size:16px;
+  box-shadow: var(--shadow);
+}
+.btn-agregar:active { transform: scale(0.97); }
+
+/* VISTA PREVIA */
+.subtitulo {
+  margin-top: 28px;
+  color: var(--teal);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.preview-box {
+  background: #161a1f;
+  padding: 16px;
+  margin-top: 10px;
+  border-radius: 14px;
+  min-height: 80px;
+  border: 1px dashed rgba(255,255,255,0.04);
+}
+
+.preview-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+  font-size: 15px;
+}
+.preview-item:last-child { border-bottom: none; }
+
+.preview-placeholder {
+  font-size: 14px;
+  color: #a1a1a1;
+}
+
+/* BOTÓN GENERAR */
+.btn-final {
+  margin-top: 26px;
+  background: var(--success);
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 12px;
+  color:#012222;
+  font-weight: 800;
+  font-size:17px;
+  box-shadow: var(--shadow);
+}
+.btn-final:active { transform: scale(0.97); }
