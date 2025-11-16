@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Factura · WolfPay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Botón regresar -->
+    <p class="regresar" onclick="location.href='../'">&lt; Regresar</p>
+
+    <!-- Título -->
+    <h1 class="titulo">FACTURAS</h1>
+
+    <hr class="divider">
+
+    <!-- HOJA A4 -->
+    <div class="hoja">
+
+      <!-- Cabecera de factura -->
+      <div class="fila-top">
+
+        <!-- Logo -->
+        <img src="../img/logo.png" class="logo">
+
+        <!-- Datos WolfPay (lado derecho) -->
+        <div class="datos-right">
+          <p class="empresa">WolfPay</p>
+          <p class="detalle">Cuenta de ahorros</p>
+          <p class="detalle">Martin Jesus Borja Vela</p>
+          <p class="detalle">+34 621 24 32 81</p>
+        </div>
+
+      </div>
+
+      <hr class="raya">
+
+      <!-- RECIBO / FACTURA -->
+      <div class="header-factura">
+        <h2 id="numeroFactura">FACTURA - N° 000</h2>
+
+        <div class="fechas">
+          <p>Fecha: <span id="fechaFactura">--/--/--</span></p>
+        </div>
+      </div>
+
+      <!-- Movimientos info -->
+      <div id="infoMontos" class="info-montos"></div>
+
+      <hr class="raya">
+
+      <!-- TABLA -->
+      <div class="tabla-header">
+        <span>PRECIO</span>
+        <span>DESCRIPCIÓN</span>
+        <span>FECHA</span>
+      </div>
+
+      <div id="listaMovimientos"></div>
+
+      <hr class="raya">
+
+      <!-- TOTAL -->
+      <div class="total-box">
+        <span id="tituloTotal">TOTAL:</span>
+        <span id="valorTotal"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
