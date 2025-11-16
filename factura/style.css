@@ -1,0 +1,184 @@
+/* Quitar highlight */
+* { -webkit-tap-highlight-color: transparent; }
+*:focus { outline: none; }
+
+:root {
+  --bg:#13171c;
+  --card:#1a1e24;
+  --text:#ffffff;
+  --teal:#11d7d7;
+  --red:#d92727;
+  --soft:#2a2f36;
+}
+
+/* GLOBAL */
+body {
+  background: var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto;
+  color: var(--text);
+  margin: 0;
+  padding: 18px;
+}
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* BOTÓN REGRESAR */
+.regresar {
+  color: var(--red);
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* TITULO PRINCIPAL */
+.titulo {
+  color: var(--teal);
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: #30343b;
+  margin-bottom: 20px;
+}
+
+/* ------------------------ */
+/*         HOJA A4         */
+/* ------------------------ */
+/* Movimiento leve a la izquierda */
+.hoja {
+  width: 92%;
+  max-width: 480px;
+  margin: 0 auto;
+  margin-left: -10px;     /* ← DESPLAZADO A LA IZQUIERDA */
+  background: var(--card);
+  padding: 20px 22px;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.40);
+}
+
+/* ------- CABECERA ------- */
+.fila-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LOGO ROJO Y MÁS GRANDE */
+.logo {
+  width: 95px;
+  opacity: 0.40;
+
+  /* Rojo EXACTO #d92727 */
+  filter: brightness(0) saturate(100%) 
+          invert(21%) sepia(94%) saturate(2654%) 
+          hue-rotate(-2deg) brightness(94%) contrast(101%);
+}
+
+.datos-right {
+  text-align: right;
+  line-height: 16px;
+}
+
+.empresa {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.detalle {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* RAYA */
+.raya {
+  border: none;
+  height: 2px;
+  background: var(--red);
+  margin: 14px 0;
+}
+
+/* FACTURA Nº */
+.header-factura {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-factura h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.fechas p {
+  margin: 0;
+  font-size: 12px;
+}
+
+/* MONTOS */
+.info-montos {
+  margin: 8px 0 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+/* ------------------------ */
+/*         TABLA            */
+/* ------------------------ */
+.tabla-header {
+  display: grid;
+  grid-template-columns: 70px 1fr 80px;    /* ajustado */
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+#listaMovimientos div {
+  display: grid;
+  grid-template-columns: 70px 1fr 80px;
+  gap: 6px;
+  padding: 7px 0;
+  border-bottom: 1px solid #2b2f36;
+  align-items: center;
+  font-size: 13px;
+  white-space: nowrap;        /* evita saltos raros */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ÍCONO */
+.icono-cat {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ------------------------ */
+/*        TOTAL / GASTADO   */
+/* ------------------------ */
+.total-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+#valorTotal {
+  color: var(--teal);
+}
+
+.gastado {
+  color: var(--red) !important;
+}
