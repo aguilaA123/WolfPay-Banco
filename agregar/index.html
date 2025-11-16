@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nueva Factura · WolfPay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- REGRESAR -->
+    <p class="btn-volver" onclick="window.location.href='../';">
+      <span class="flecha">‹</span> Regresar
+    </p>
+
+    <!-- Título -->
+    <h2 class="titulo-boleta" id="boletaTitulo">Boleta-000</h2>
+    <hr class="divider" />
+
+    <!-- FORMULARIO -->
+    <section class="formulario">
+
+      <!-- Precio + Fecha -->
+      <div class="form-top">
+        <div class="campo">
+          <label for="precioInput">Precio (€)</label>
+          <input id="precioInput" type="number" inputmode="decimal" placeholder="Ej: 3" />
+        </div>
+
+        <div class="campo">
+          <label for="fechaInput">Fecha</label>
+          <input id="fechaInput" type="text" placeholder="DD/MM/AA" />
+        </div>
+      </div>
+
+      <!-- Descripción -->
+      <div class="campo campo-descripcion">
+        <label for="descInput">Descripción</label>
+        <textarea id="descInput" rows="2" placeholder="Ej: Comida, servicio, compra..."></textarea>
+      </div>
+
+      <!-- Categoría -->
+      <div class="campo">
+        <label for="categoria">Categoría</label>
+        <select id="categoria">
+          <option value="">Elige la opción</option>
+          <option value="Supermercado">Supermercado</option>
+          <option value="Aliexpress">Aliexpress</option>
+          <option value="Amazon">Amazon</option>
+          <option value="J&S">J&S</option>
+          <option value="Comida">Comida</option>
+          <option value="Ocio">Ocio</option>
+          <option value="Otros">Otros</option>
+        </select>
+      </div>
+
+      <!-- Interruptor -->
+      <div class="toggle-montos">
+        <label class="switch">
+          <input type="checkbox" id="toggleMontos" />
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-text">Usar montos inicial/final</span>
+      </div>
+
+      <!-- Monto inicial/final -->
+      <div class="montos-extra montos-disabled" id="montosExtra">
+        <div class="campo">
+          <label for="montoInicial">Monto inicial</label>
+          <input id="montoInicial" type="number" inputmode="decimal" placeholder="Ej: 100" disabled />
+        </div>
+
+        <div class="campo">
+          <label for="montoFinal">Monto final</label>
+          <input id="montoFinal" type="text" placeholder="0.00€" disabled />
+        </div>
+      </div>
+
+      <!-- Botón -->
+      <button id="btnAgregar" class="btn-agregar">Añadir</button>
+    </section>
+
+    <!-- Vista previa -->
+    <h3 class="subtitulo">Vista previa</h3>
+    <div class="preview-box" id="previewBox">
+      <p class="preview-placeholder" id="previewPlaceholder">Aún no agregas nada.</p>
+    </div>
+
+    <!-- Generar -->
+    <button id="btnGenerar" class="btn-final">Generar Factura</button>
+
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+  </html>
