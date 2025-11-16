@@ -1,3 +1,22 @@
+/* Quitar highlight azul en Android/Chrome */
+* {
+  -webkit-tap-highlight-color: transparent!important;
+}
+
+/* Quitar borde azul de enfoque */
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Chrome controla focus visible por defecto, también lo quitamos */
+*:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+
 :root {
   --teal:#11d7d7;
   --bg:#171a1f;
@@ -214,4 +233,33 @@ button:active { transform: scale(0.97); }
   color: white;
   background: rgba(255,255,255,0.1);
   transform: scale(1.08);
+}
+
+
+/* --- BOTÓN REGISTRO (nuevo, no rompe nada) --- */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registro-btn {
+  background: rgba(17, 215, 215, 0.08);
+  border: 1px solid rgba(17, 215, 215, 0.35);
+  color: var(--teal);
+  padding: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-top: -15px;
+}
+
+.registro-btn:hover {
+  background: rgba(17, 215, 215, 0.18);
+  transform: scale(1.06);
+}
+
+.registro-btn svg {
+  width: 22px;
+  height: 22px;
 }
