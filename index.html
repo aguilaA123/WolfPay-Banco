@@ -17,12 +17,29 @@
 
 <body>
   <div class="container">
-    <h2 class="titulo">CUENTA DE AHORROS</h2>
+
+    <!-- ====== HEADER con nuevo botón ====== -->
+    <div class="header-top">
+      <h2 class="titulo">CUENTA DE AHORROS</h2>
+
+      <!-- 🔥 NUEVO BOTÓN REGISTRO -->
+      <button class="registro-btn" id="registroBtn" title="Ver registros">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/>
+          <path d="M8 12h5"/>
+          <path d="M16 9.5a4 4 0 1 0 0 5.2"/>
+        </svg>
+      </button>
+    </div>
+
     <hr class="divider" />
 
     <!-- Tarjeta principal -->
     <div class="card cuenta">
       <div class="saldo">0.00€</div>
+
       <div class="iban-row">
         <div class="iban-text">IBAN: ES06 2100 1278 2007 0000 5250</div>
         <button id="copyIbanBtn" class="copy-btn" title="Copiar IBAN">📋</button>
@@ -38,6 +55,7 @@
 
     <!-- Sección Bizum -->
     <section class="bizum-section">
+
       <div class="bizum-header">
         <div class="bizum-logo">
           <img src="../img/bizum.png" alt="bizum" />
@@ -52,6 +70,7 @@
         <div class="bizum-monto" id="bizumMonto"></div>
       </div>
 
+      <!-- Estado -->
       <div class="bizum-status"></div>
 
       <!-- Botones dinámicos -->
