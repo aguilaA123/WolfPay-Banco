@@ -230,3 +230,8 @@ copyBtn.addEventListener("click", async () => {
     showFlashMessage("Error al copiar", "#b91c1c");
   }
 });
+
+// Botón registro
+document.getElementById("registroBtn").addEventListener("click", () => {
+  window.location.href = "registro/";
+});
