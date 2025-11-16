@@ -1,0 +1,139 @@
+/* Quitar highlight azul en Android/Chrome */
+* {
+  -webkit-tap-highlight-color: transparent!important;
+}
+*:focus,
+*:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+:root {
+  --teal:#11d7d7;
+  --bg:#171a1f;
+  --card:#1e2228;
+  --text:#ffffff;
+  --danger:#b91c1c;
+  --success:#10c76f;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+body {
+  background: var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--text);
+  min-height: 100vh;
+  padding: 24px 18px 40px;
+}
+
+.container { 
+  max-width: 480px; 
+  margin: 0 auto; 
+}
+
+/* ===== HEADER ===== */
+.header-registro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: nowrap;
+}
+
+.titulo {
+  color: var(--teal);
+  font-size: 18.2px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Línea divisoria */
+.divider {
+  border: none;
+  height: 1px;
+  background: #30343b;
+  margin-bottom: 20px;
+}
+
+/* ===== Botón "Generar +" ===== */
+.btn-generar {
+  border: none;
+  background: var(--teal);
+  color: #012222;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: 0.12s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-generar:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+/* Placeholder */
+.placeholder {
+  font-size: 14px;
+  color: #a1a1a1;
+  text-align: center;
+  padding: 40px 10px;
+  border-radius: 14px;
+  background: #161a1f;
+  border: 1px dashed rgba(255,255,255,0.04);
+}
+
+/* ===== GRID ===== */
+#contenedorRegistros {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* Tarjetas */
+.boleta {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+.boleta:active {
+  transform: scale(0.97);
+}
+
+.boleta-titulo {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.boleta-fecha {
+  font-size: 11px;
+  color: #bbb;
+}
+
+/* NEW badge */
+.new-tag {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #d12828;
+  color: white;
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
